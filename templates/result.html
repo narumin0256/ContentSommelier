@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>おすすめの漫画</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container result-container">
+        <h1>おすすめの漫画</h1>
+        <div class="result-box">
+            <p class="result-title">タイトル</p>
+            <p>{{ recommendation['title'] }}</p>
+            <p class="result-genre">ジャンル</p>
+            <p>{{ recommendation['genre'] }}</p>
+            <p class="result-summary">あらすじ</p>
+            <p>{{ recommendation['summary'] }}</p>
+            <p class="result-points">おすすめポイント</p>
+            <p>{{ recommendation['points'] }}</p>
+        </div>
+        <a href="/">戻る</a>
+    </div>
+</body>
+</html>

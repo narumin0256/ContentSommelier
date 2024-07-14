@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>OpenAI API Example</title>
+        <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    </head>
+    <div class="container">
+    <body>
+        <h1>漫画ソムリエ</h1>
+        <p>どんな漫画を読みたいですか？</p>
+
+        <form action="/submit" method="post">
+            <label for="genre">ジャンル:</label>
+            <select name="genre" id="genre" required>
+                <option value="恋愛">恋愛</option>
+                <option value="ホラー">ホラー</option>
+                <option value="ファンタジー">ファンタジー</option>
+                <option value="ミステリー">ミステリー</option>
+                <option value="アクション">アクション</option>
+                <option value="custom">自由入力</option>
+            </select>
+            <input type="text" id="custom_genre" name="custom_genre" placeholder="自由入力ジャンル" style="display:none;">
+            
+            <label for="length">長さ:</label>
+            <select name="length" id="length" required>
+                <option value="長編">長編</option>
+                <option value="中編">中編</option>
+                <option value="短編">短編</option>
+            </select>
+            
+            <button type="submit">おすすめを表示</button>
+        </form>
+    </div>
+        <script>
+            document.getElementById('genre').addEventListener('change', function() {
+                var customInput = document.getElementById('custom_genre');
+                if (this.value === 'custom') {
+                    customInput.style.display = 'block';
+                } else {
+                    customInput.style.display = 'none';
+                }
+            });
+        </script>
+    </body>
+</html>
